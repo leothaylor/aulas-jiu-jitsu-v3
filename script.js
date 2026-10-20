@@ -83,6 +83,31 @@ if(scheduleRoot){
   },{passive:true});
 }
 
+
+/* Fotografia ganha cor somente com hover ou enquanto o dedo está sobre ela. */
+{
+  const photos=all(".hero__arch, .benefits__sticky, .benefit__mobile, .about__portrait, .venue__narrow, .schedule__fallback");
+  photos.forEach(photo=>photo.classList.add("photo-reveal"));
+  let activePhoto=null;
+  const setActive=(photo)=>{
+    if(activePhoto===photo)return;
+    if(activePhoto)activePhoto.classList.remove("is-color-revealed");
+    activePhoto=photo;
+    if(activePhoto)activePhoto.classList.add("is-color-revealed");
+  };
+  const updateTouch=(event)=>{
+    const touch=event.touches&&event.touches[0];
+    if(!touch){setActive(null);return;}
+    const el=document.elementFromPoint(touch.clientX,touch.clientY);
+    setActive(el&&el.closest?el.closest(".photo-reveal"):null);
+  };
+  document.addEventListener("touchstart",updateTouch,{passive:true});
+  document.addEventListener("touchmove",updateTouch,{passive:true});
+  document.addEventListener("touchend",()=>setActive(null),{passive:true});
+  document.addEventListener("touchcancel",()=>setActive(null),{passive:true});
+  window.addEventListener("blur",()=>setActive(null));
+}
+
 if(reduced)return;
 if(window.Lenis){try{const lenis=new window.Lenis({duration:1.15,anchors:true});if(G&&S){lenis.on("scroll",S.update);G.ticker.add(t=>lenis.raf(t*1000));G.ticker.lagSmoothing(0)}else{function raf(t){lenis.raf(t);requestAnimationFrame(raf)}requestAnimationFrame(raf)}}catch(e){console.warn("Smooth-scroll fallback",e)}}
 if(!G||!S){one(".hero__arch")?.style.setProperty("clip-path","none");return;}

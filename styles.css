@@ -105,3 +105,26 @@
 @media(max-width:390px){
  .hero__headline{font-size:clamp(39px,9.7vw,48px)}
 }
+
+
+/* Revelação de cor nas fotos: os filtros originais retornam ao sair. */
+.photo-reveal img,.benefit__mobile.photo-reveal{
+  transition:filter .65s cubic-bezier(.22,1,.36,1);
+}
+@media (hover:hover) and (pointer:fine){
+  .hero__arch.photo-reveal:hover img{filter:grayscale(0) contrast(1.08)}
+  .benefits__sticky.photo-reveal:hover .benefits__picture.is-active img{filter:grayscale(0) brightness(.8)}
+  .benefit__mobile.photo-reveal:hover{filter:grayscale(0)}
+  .about__portrait.photo-reveal:hover img{filter:grayscale(0)}
+  .venue__narrow.photo-reveal:hover img{filter:grayscale(0)}
+  .schedule__fallback.photo-reveal:hover img{filter:grayscale(0) brightness(.72)!important}
+}
+.hero__arch.photo-reveal.is-color-revealed img{filter:grayscale(0) contrast(1.08)}
+.benefits__sticky.photo-reveal.is-color-revealed .benefits__picture.is-active img{filter:grayscale(0) brightness(.8)}
+.benefit__mobile.photo-reveal.is-color-revealed{filter:grayscale(0)}
+.about__portrait.photo-reveal.is-color-revealed img{filter:grayscale(0)}
+.venue__narrow.photo-reveal.is-color-revealed img{filter:grayscale(0)}
+.schedule__fallback.photo-reveal.is-color-revealed img{filter:grayscale(0) brightness(.72)!important}
+@media (prefers-reduced-motion:reduce){
+  .photo-reveal img,.benefit__mobile.photo-reveal{transition:none!important}
+}

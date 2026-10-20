@@ -31,3 +31,9 @@ HTML/CSS/JS, GSAP 3.12.5 + ScrollTrigger e Lenis por CDN; fallbacks sem bibliote
 - Na área da TRION, carrossel preparado em assets/cronogramas/. O usuário faz upload direto dos arquivos de cada dia.
 - Sem artes disponíveis, há um fallback fotográfico. Não exibir imagens quebradas.
 - O carrossel mostra os horários gerais do Studio TRION. A grade específica do professor é exibida separadamente.
+
+## Interação das fotografias
+- No computador, as fotos ficam coloridas ao passar o mouse e retornam ao preto e branco ao sair.
+- No celular, a cor aparece enquanto o dedo estiver sobre a foto, inclusive durante o movimento, voltando ao padrão ao retirar o dedo.
+- A cópia, layout e artes de programação da TRION permanecem inalterados.
+- A transição respeita a preferência por movimento reduzido.
