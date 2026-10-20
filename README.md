@@ -22,3 +22,12 @@ HTML/CSS/JS, GSAP 3.12.5 + ScrollTrigger e Lenis por CDN; fallbacks sem bibliote
 - Horários seg/qua/sex 10h–11h30 e endereço da TRION conforme sites existentes.
 - CTAs não prometem gratuidade; aula experimental deve ser confirmada.
 - Área do Aluno continua no site oficial V2.
+
+
+## Revisão após feedback visual
+- Removidos selo circular da hero, faixa animada de palavras e seção fotográfica sem função.
+- Método passou a ter números tipográficos, sem ícones decorativos.
+- Copy revisada em títulos e seções principais para reduzir slogans e fórmulas genéricas.
+- Na área da TRION, carrossel preparado em assets/cronogramas/. O usuário faz upload direto dos arquivos de cada dia.
+- Sem artes disponíveis, há um fallback fotográfico. Não exibir imagens quebradas.
+- O carrossel mostra os horários gerais do Studio TRION. A grade específica do professor é exibida separadamente.
