@@ -96,7 +96,7 @@ G.to(".hero__right",{yPercent:7,ease:"none",scrollTrigger:{trigger:".hero",start
 G.fromTo(".method__steps article",{y:50,opacity:.15},{y:0,opacity:1,stagger:.18,duration:1,ease:"power3.out",scrollTrigger:{trigger:".method__steps",start:"top 80%",once:true}});
 G.to(".about__portrait img",{yPercent:-8,ease:"none",scrollTrigger:{trigger:".about",start:"top bottom",end:"bottom top",scrub:1}});
 G.fromTo(".venue__narrow",{clipPath:"inset(100% 0 0 0)"},{clipPath:"inset(0% 0 0 0)",ease:"none",scrollTrigger:{trigger:".venue__collage",start:"top 85%",end:"top 32%",scrub:1}});
-const pics=all(".benefits__picture"),sections=all(".benefit");let active=-1;function swap(i){if(i===active)return;active=i;pics.forEach((p,j)=>p.classList.toggle("is-active",j===i));const c=one("#picture-counter");if(c)c.textContent=String(i+1).padStart(2,"0")}
+const pics=all(".benefits__picture"),sections=all(".benefit");let active=-1;function swap(i){if(i===active)return;active=i;pics.forEach((p,j)=>p.classList.toggle("is-active",j===i));}
 if(matchMedia("(min-width: 701px)").matches){sections.forEach((section,i)=>S.create({trigger:section,start:"top 55%",end:"bottom 45%",onEnter:()=>swap(i),onEnterBack:()=>swap(i)}))}
 addEventListener("load",()=>S.refresh(),{once:true});
 })();

@@ -89,3 +89,19 @@
  .schedule__eyebrow{font-size:8px}
 }
 @media(prefers-reduced-motion:reduce){.schedule__image{transition:none!important}}
+
+
+/* Revisão pontual: cabeçalho de apresentação, respiro do título TRION e remoção de metadados visuais. */
+.hero__headline{font-size:clamp(57px,6.5vw,112px)}
+.hero__line--name{font-size:.84em;letter-spacing:-.088em}
+.venue__word-gap{display:inline-block;margin-left:.17em;white-space:nowrap}
+.reviews__note{justify-content:flex-end}
+.footer__legal{justify-content:flex-start}
+@media(max-width:700px){
+ .hero__headline{font-size:clamp(45px,9.7vw,72px)}
+ .hero__line--name{font-size:.9em}
+ .venue__word-gap{margin-left:.14em}
+}
+@media(max-width:390px){
+ .hero__headline{font-size:clamp(39px,9.7vw,48px)}
+}
